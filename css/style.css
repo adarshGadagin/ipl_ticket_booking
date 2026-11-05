@@ -1,0 +1,114 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+.pghead{
+    color: rgb(172, 60, 60);
+    font-size:30px;
+    font-weight:bold;
+    font-style: italic;
+}
+
+
+header, footer {
+    background-color: rgba(87, 117, 177, 0.488);
+    color: rgba(29, 28, 28, 0.27);
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background-color: #ff8400;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.btn, .book-btn {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.container {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: navy;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: navy;
+    color: white;
+}
+
+.booking-layout, .guidelines {
+    display: flex;
+    gap: 20px;
+}
+
+form, .summary, .card {
+    padding: 20px;
+}
+
+form {
+    width: 60%;
+}
+
+.summary, .card {
+    background-color: lightblue;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: navy;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+footer {
+    text-align: center;
+}

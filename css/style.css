@@ -35,7 +35,7 @@ nav a {
 }
 
 .hero {
-    background-color: #ff8400;
+    background-color: #172f65;
     color: white;
     text-align: center;
     padding: 50px;
@@ -111,4 +111,34 @@ button {
 
 footer {
     text-align: center;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin: 0 8px 0 0;
+}
+
+.option {
+    margin-top: 8px;
+}
+
+.option label {
+    display: inline;
+    margin: 0;
+}
+
+button[type="reset"] {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-left: 10px;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border: 2px solid red;
+}
+
+input:valid:not(:placeholder-shown) {
+    border: 2px solid green;
 }

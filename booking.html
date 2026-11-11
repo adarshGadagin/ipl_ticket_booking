@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - IPL 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="pghead">IPL 2026</h2>
+            <ul>
+                <li><a href="index.html#matches">Matches</a></li>
+                <li><a href="booking.html">Book Ticket</a></li>
+                <li><a href="index.html#mybookings">My Bookings</a></li>
+                <li><a href="index.html#guidelines">Guidelines</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Ticket Booking Form</h2>
+        <p>Fields marked * are required.</p>
+
+        <form action="#" method="post">
+
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your name"
+                   required minlength="3" maxlength="50"
+                   title="Name must be 3 to 50 characters long.">
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="10-digit mobile number"
+                   required minlength="10" maxlength="10"
+                   pattern="[6-9][0-9]{9}"
+                   title="Enter a 10-digit mobile number starting with 6, 7, 8 or 9.">
+
+            <label for="match">Select Match *</label>
+            <select id="match" name="match" required>
+                <option value="">-- Choose a match --</option>
+                <option value="RCB vs CSK">RCB vs CSK - 10 April 2026, Bengaluru</option>
+                <option value="MI vs KKR">MI vs KKR - 12 April 2026, Mumbai</option>
+                <option value="CSK vs RR">CSK vs RR - 14 April 2026, Chennai</option>
+            </select>
+
+            <label for="stand">Stand Category *</label>
+            <select id="stand" name="stand" required>
+                <option value="">-- Choose a stand --</option>
+                <option value="General">General</option>
+                <option value="Premium">Premium</option>
+                <option value="VIP">VIP</option>
+            </select>
+
+            <label for="tickets">Number of Tickets * (1 to 10)</label>
+            <input type="number" id="tickets" name="tickets"
+                   placeholder="Enter quantity"
+                   required min="1" max="10">
+
+            <label>Ticket Delivery *</label>
+            <div class="option">
+                <input type="radio" id="email-ticket" name="delivery" value="Email" required>
+                <label for="email-ticket">E-ticket by Email</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="sms-ticket" name="delivery" value="SMS">
+                <label for="sms-ticket">E-ticket by SMS</label>
+            </div>
+
+            <label>Additional Preferences</label>
+            <div class="option">
+                <input type="checkbox" id="parking" name="extras" value="Parking">
+                <label for="parking">Parking pass</label>
+            </div>
+            <div class="option">
+                <input type="checkbox" id="meal" name="extras" value="Meal combo">
+                <label for="meal">Meal combo</label>
+            </div>
+            <div class="option">
+                <input type="checkbox" id="jersey" name="extras" value="Team jersey">
+                <label for="jersey">Team jersey</label>
+            </div>
+
+            <div class="option">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the stadium guidelines *</label>
+            </div>
+
+            <br>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+
+        <p><a href="index.html">&larr; Back to Home</a></p>
+    </section>
+
+    <footer>
+        <p>© 2026 IPL Ticket Booking. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

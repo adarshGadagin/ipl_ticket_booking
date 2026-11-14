@@ -53,7 +53,7 @@
         </ul>
     </section>
 
-    <section class="container">
+    <section class="container" id="matches">
         <h2>Match Schedule</h2>
 
         <label>Filter by Team:</label>
@@ -85,7 +85,7 @@
                 <td>₹800</td>
                 <td>₹2000</td>
                 <td>₹5000</td>
-                <td><a href="booking.html" class="book-btn">Book</a></td>
+                <td><a href="#booking" class="book-btn">Book</a></td>
             </tr>
 
             <tr>
@@ -96,7 +96,7 @@
                 <td>₹1000</td>
                 <td>₹2500</td>
                 <td>₹6000</td>
-                <td><a href="booking.html" class="book-btn">Book</a></td>
+                <td><a href="#booking" class="book-btn">Book</a></td>
             </tr>
 
             <tr>
@@ -107,19 +107,19 @@
                 <td>₹700</td>
                 <td>₹1800</td>
                 <td>₹4500</td>
-                <td><a href="booking.html" class="book-btn">Book</a></td>
+                <td><a href="#booking" class="book-btn">Book</a></td>
             </tr>
         </table>
     </section>
 
-    <section class="container">
+    <section class="container" id="booking">
         <h2>Book Your Tickets</h2>
 
         <div class="booking-layout">
 
-            <form>
+            <form id="booking-form">
                 <label>Select Match:</label>
-                <select>
+                <select id="match-select">
                     <option>RCB vs CSK</option>
                     <option>MI vs KKR</option>
                     <option>CSK vs RR</option>
@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <section class="container">
+    <section class="container" id="mybookings">
         <h2>My Ticket Bookings</h2>
 
         <table>
@@ -176,7 +176,7 @@
         <p>No bookings available yet.</p>
     </section>
 
-    <section class="container">
+    <section class="container" id="guidelines">
         <h2>Stadium Guidelines</h2>
 
         <div class="guidelines">
@@ -203,5 +203,8 @@
         <p>© 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
 
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

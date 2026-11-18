@@ -10,7 +10,12 @@
     <header>
         <nav>
             <h2 class="pghead">IPL 2026</h2>
-            <ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="nav-links" class="nav-links">
                 <li><a href="#matches">Matches</a></li>
                 <li><a href="booking.html">Book Ticket</a></li>
                 <li><a href="#mybookings">My Bookings</a></li>
@@ -56,60 +61,72 @@
     <section class="container" id="matches">
         <h2>Match Schedule</h2>
 
-        <label>Filter by Team:</label>
-        <select>
-            <option>All Teams</option>
-            <option>RCB</option>
-            <option>CSK</option>
-            <option>MI</option>
-            <option>KKR</option>
-        </select>
+        <div class="schedule-controls">
+            <div class="filter-group">
+                <label for="team-filter">Filter by Team:</label>
+                <select id="team-filter">
+                    <option value="All">All Teams</option>
+                    <option value="RCB">RCB</option>
+                    <option value="CSK">CSK</option>
+                    <option value="MI">MI</option>
+                    <option value="KKR">KKR</option>
+                    <option value="RR">RR</option>
+                </select>
+            </div>
 
-        <table>
-            <tr>
-                <th>Match No.</th>
-                <th>Teams</th>
-                <th>Date & Time</th>
-                <th>Venue</th>
-                <th>General</th>
-                <th>Premium</th>
-                <th>VIP</th>
-                <th>Action</th>
-            </tr>
+            <div class="view-toggle">
+                <label>View:</label>
+                <button type="button" id="grid-view-btn" class="toggle-btn active">Grid View</button>
+                <button type="button" id="list-view-btn" class="toggle-btn">List View</button>
+            </div>
+        </div>
 
-            <tr>
-                <td>1</td>
-                <td>RCB vs CSK</td>
-                <td>10 April 2026<br>7:30 PM</td>
-                <td>Bengaluru</td>
-                <td>₹800</td>
-                <td>₹2000</td>
-                <td>₹5000</td>
-                <td><a href="#booking" class="book-btn">Book</a></td>
-            </tr>
+        <div id="matches-container" class="matches-grid">
+            <div class="match-card" data-teams="RCB CSK">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 1</span>
+                    <span class="match-date">10 April 2026</span>
+                </div>
+                <h3 class="match-teams">RCB vs CSK</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Bengaluru (M. Chinnaswamy Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹800</span>
+                    <span class="price-chip">Premium: ₹2000</span>
+                    <span class="price-chip">VIP: ₹5000</span>
+                </div>
+                <a href="#booking" class="btn book-btn" data-match="RCB vs CSK">Book Tickets</a>
+            </div>
 
-            <tr>
-                <td>2</td>
-                <td>MI vs KKR</td>
-                <td>12 April 2026<br>7:30 PM</td>
-                <td>Mumbai</td>
-                <td>₹1000</td>
-                <td>₹2500</td>
-                <td>₹6000</td>
-                <td><a href="#booking" class="book-btn">Book</a></td>
-            </tr>
+            <div class="match-card" data-teams="MI KKR">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 2</span>
+                    <span class="match-date">12 April 2026</span>
+                </div>
+                <h3 class="match-teams">MI vs KKR</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Mumbai (Wankhede Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹1000</span>
+                    <span class="price-chip">Premium: ₹2500</span>
+                    <span class="price-chip">VIP: ₹6000</span>
+                </div>
+                <a href="#booking" class="btn book-btn" data-match="MI vs KKR">Book Tickets</a>
+            </div>
 
-            <tr>
-                <td>3</td>
-                <td>CSK vs RR</td>
-                <td>14 April 2026<br>3:30 PM</td>
-                <td>Chennai</td>
-                <td>₹700</td>
-                <td>₹1800</td>
-                <td>₹4500</td>
-                <td><a href="#booking" class="book-btn">Book</a></td>
-            </tr>
-        </table>
+            <div class="match-card" data-teams="CSK RR">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 3</span>
+                    <span class="match-date">14 April 2026</span>
+                </div>
+                <h3 class="match-teams">CSK vs RR</h3>
+                <p class="match-venue">🕒 3:30 PM &bull; 📍 Chennai (MA Chidambaram Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹700</span>
+                    <span class="price-chip">Premium: ₹1800</span>
+                    <span class="price-chip">VIP: ₹4500</span>
+                </div>
+                <a href="#booking" class="btn book-btn" data-match="CSK vs RR">Book Tickets</a>
+            </div>
+        </div>
     </section>
 
     <section class="container" id="booking">

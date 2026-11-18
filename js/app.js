@@ -17,6 +17,70 @@ function showToast(message) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("open");
+            const isOpen = navLinks.classList.contains("active");
+            hamburger.setAttribute("aria-expanded", isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove("active");
+                    hamburger.classList.remove("open");
+                    hamburger.setAttribute("aria-expanded", "false");
+                }
+            });
+        });
+    }
+
+    const teamFilter = document.getElementById("team-filter");
+    const matchCards = document.querySelectorAll(".match-card");
+
+    if (teamFilter) {
+        teamFilter.addEventListener("change", function () {
+            const selectedTeam = teamFilter.value.trim().toUpperCase();
+
+            matchCards.forEach(function (card) {
+                const teamsAttr = (card.getAttribute("data-teams") || "").toUpperCase();
+                const cardText = card.textContent.toUpperCase();
+
+                if (selectedTeam === "ALL" || selectedTeam === "ALL TEAMS" || teamsAttr.includes(selectedTeam) || cardText.includes(selectedTeam)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            showToast("Showing matches for: " + (selectedTeam === "ALL" ? "All Teams" : teamFilter.value));
+        });
+    }
+
+    const gridViewBtn = document.getElementById("grid-view-btn");
+    const listViewBtn = document.getElementById("list-view-btn");
+    const matchesContainer = document.getElementById("matches-container");
+
+    if (gridViewBtn && listViewBtn && matchesContainer) {
+        gridViewBtn.addEventListener("click", function () {
+            matchesContainer.classList.remove("list-view");
+            gridViewBtn.classList.add("active");
+            listViewBtn.classList.remove("active");
+            showToast("Switched to Grid View");
+        });
+
+        listViewBtn.addEventListener("click", function () {
+            matchesContainer.classList.add("list-view");
+            listViewBtn.classList.add("active");
+            gridViewBtn.classList.remove("active");
+            showToast("Switched to List View");
+        });
+    }
+
     const priceChart = {
         "RCB vs CSK": { General: 800, Premium: 2000, VIP: 5000 },
         "MI vs KKR": { General: 1000, Premium: 2500, VIP: 6000 },
@@ -121,10 +185,23 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function (e) {
             e.preventDefault();
 
-            const row = button.closest("tr");
-            let teamName = "";
-            if (row && row.cells.length > 1) {
-                teamName = row.cells[1].textContent.trim();
+            let teamName = button.getAttribute("data-match") || "";
+
+            if (!teamName) {
+                const card = button.closest(".match-card");
+                if (card) {
+                    const teamsElem = card.querySelector(".match-teams, h3");
+                    if (teamsElem) {
+                        teamName = teamsElem.textContent.trim();
+                    }
+                }
+            }
+
+            if (!teamName) {
+                const row = button.closest("tr");
+                if (row && row.cells.length > 1) {
+                    teamName = row.cells[1].textContent.trim();
+                }
             }
 
             if (matchSelect && teamName) {

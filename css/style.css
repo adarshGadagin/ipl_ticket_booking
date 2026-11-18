@@ -93,6 +93,12 @@ form {
 
 .summary, .card {
     background-color: lightblue;
+    border-radius: 6px;
+}
+
+.summary {
+    flex: 1;
+    align-self: flex-start;
 }
 
 label {

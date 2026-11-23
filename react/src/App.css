@@ -1,14 +1,39 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
 .pghead {
-  color: rgb(172, 60, 60);
-  font-size: 30px;
+  color: #ff8400;
+  font-size: 28px;
   font-weight: bold;
   font-style: italic;
   margin: 0;
 }
 
 header {
-  background-color: rgba(87, 117, 177, 0.488);
-  padding: 15px;
+  background-color: #172f65;
+  color: white;
+  padding: 15px 25px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  background-color: #172f65;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 nav {
@@ -17,84 +42,286 @@ nav {
   align-items: center;
 }
 
-nav ul {
+.nav-links {
   display: flex;
   list-style: none;
   gap: 20px;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
-nav a {
+.nav-links a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  color: #ff8400;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .hero {
   background-color: #172f65;
   color: white;
   text-align: center;
-  padding: 50px;
+  padding: 60px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero h1 {
-  margin: 0 0 10px 0;
+  margin-top: 0;
+  font-size: 32px;
 }
 
 .hero p {
   margin: 0 0 20px 0;
 }
 
-.btn {
-  background-color: orange;
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  margin: 0 5px;
+.btn, .book-btn {
   display: inline-block;
+  background-color: #ff8400;
+  color: white;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.btn:hover, .book-btn:hover {
+  background-color: #e07200;
+}
+
+.book-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .container {
   background-color: white;
-  margin: 20px;
-  padding: 20px;
+  margin: 25px auto;
+  padding: 25px;
+  max-width: 1100px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 h2 {
-  color: navy;
+  color: #172f65;
   margin-top: 0;
 }
 
-.matches-list {
-  display: flex;
+h3 {
+  color: #172f65;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 15px;
 }
 
-.card {
-  background-color: lightblue;
+.match-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e5ed;
+  border-radius: 8px;
   padding: 20px;
-  flex: 1 1 250px;
-  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card h3 {
+.match-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.match-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.match-badge {
+  background-color: #172f65;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.match-date {
+  font-size: 13px;
+  color: #666;
+  font-weight: bold;
+}
+
+.match-teams {
+  color: #172f65;
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.match-venue {
+  color: #555;
+  font-size: 14px;
+  margin: 4px 0 12px 0;
+}
+
+.match-prices {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.price-chip {
+  background-color: #eef3fb;
+  color: #172f65;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid gray;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #172f65;
+  color: white;
+}
+
+.guidelines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.guidelines .card {
+  background-color: lightblue;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.guidelines .card h3 {
   margin-top: 0;
 }
 
-.book-btn {
-  background-color: orange;
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
+.booking-alert {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+  font-weight: bold;
 }
 
-.book-btn:hover,
-.btn:hover {
-  opacity: 0.9;
+@media (max-width: 992px) {
+  .matches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #172f65;
+    padding: 15px 20px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    gap: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+  }
+
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guidelines {
+    grid-template-columns: 1fr;
+  }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL 2026 Ticket Booking</title>
+    <link rel="icon" type="image/png" href="img/ipl-logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -66,11 +67,16 @@
                 <label for="team-filter">Filter by Team:</label>
                 <select id="team-filter">
                     <option value="All">All Teams</option>
-                    <option value="RCB">RCB</option>
                     <option value="CSK">CSK</option>
                     <option value="MI">MI</option>
+                    <option value="RCB">RCB</option>
                     <option value="KKR">KKR</option>
+                    <option value="GT">GT</option>
                     <option value="RR">RR</option>
+                    <option value="SRH">SRH</option>
+                    <option value="DC">DC</option>
+                    <option value="LSG">LSG</option>
+                    <option value="PBKS">PBKS</option>
                 </select>
             </div>
 
@@ -82,49 +88,79 @@
         </div>
 
         <div id="matches-container" class="matches-grid">
-            <div class="match-card" data-teams="RCB CSK">
+            <div class="match-card" data-teams="CSK MI">
                 <div class="match-card-header">
                     <span class="match-badge">Match 1</span>
-                    <span class="match-date">10 April 2026</span>
-                </div>
-                <h3 class="match-teams">RCB vs CSK</h3>
-                <p class="match-venue">🕒 7:30 PM &bull; 📍 Bengaluru (M. Chinnaswamy Stadium)</p>
-                <div class="match-prices">
-                    <span class="price-chip">General: ₹800</span>
-                    <span class="price-chip">Premium: ₹2000</span>
-                    <span class="price-chip">VIP: ₹5000</span>
-                </div>
-                <a href="#booking" class="btn book-btn" data-match="RCB vs CSK">Book Tickets</a>
-            </div>
-
-            <div class="match-card" data-teams="MI KKR">
-                <div class="match-card-header">
-                    <span class="match-badge">Match 2</span>
-                    <span class="match-date">12 April 2026</span>
-                </div>
-                <h3 class="match-teams">MI vs KKR</h3>
-                <p class="match-venue">🕒 7:30 PM &bull; 📍 Mumbai (Wankhede Stadium)</p>
-                <div class="match-prices">
-                    <span class="price-chip">General: ₹1000</span>
-                    <span class="price-chip">Premium: ₹2500</span>
-                    <span class="price-chip">VIP: ₹6000</span>
-                </div>
-                <a href="#booking" class="btn book-btn" data-match="MI vs KKR">Book Tickets</a>
-            </div>
-
-            <div class="match-card" data-teams="CSK RR">
-                <div class="match-card-header">
-                    <span class="match-badge">Match 3</span>
                     <span class="match-date">14 April 2026</span>
                 </div>
-                <h3 class="match-teams">CSK vs RR</h3>
-                <p class="match-venue">🕒 3:30 PM &bull; 📍 Chennai (MA Chidambaram Stadium)</p>
+                <h3 class="match-teams">CSK vs MI</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Mumbai (Wankhede Stadium)</p>
                 <div class="match-prices">
-                    <span class="price-chip">General: ₹700</span>
-                    <span class="price-chip">Premium: ₹1800</span>
+                    <span class="price-chip">General: ₹1500</span>
+                    <span class="price-chip">Premium: ₹3000</span>
+                    <span class="price-chip">VIP: ₹6000</span>
+                </div>
+                <a href="booking.html?match=CSK%20vs%20MI" class="btn book-btn" data-match="CSK vs MI">Book Tickets</a>
+            </div>
+
+            <div class="match-card" data-teams="RCB KKR">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 2</span>
+                    <span class="match-date">16 April 2026</span>
+                </div>
+                <h3 class="match-teams">RCB vs KKR</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Bengaluru (M. Chinnaswamy Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹1800</span>
+                    <span class="price-chip">Premium: ₹3500</span>
+                    <span class="price-chip">VIP: ₹7000</span>
+                </div>
+                <a href="booking.html?match=RCB%20vs%20KKR" class="btn book-btn" data-match="RCB vs KKR">Book Tickets</a>
+            </div>
+
+            <div class="match-card" data-teams="GT RR">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 3</span>
+                    <span class="match-date">18 April 2026</span>
+                </div>
+                <h3 class="match-teams">GT vs RR</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Ahmedabad (Narendra Modi Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹1200</span>
+                    <span class="price-chip">Premium: ₹2500</span>
+                    <span class="price-chip">VIP: ₹5000</span>
+                </div>
+                <a href="booking.html?match=GT%20vs%20RR" class="btn book-btn" data-match="GT vs RR">Book Tickets</a>
+            </div>
+
+            <div class="match-card" data-teams="SRH DC">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 4</span>
+                    <span class="match-date">20 April 2026</span>
+                </div>
+                <h3 class="match-teams">SRH vs DC</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Hyderabad (Rajiv Gandhi Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹1000</span>
+                    <span class="price-chip">Premium: ₹2200</span>
                     <span class="price-chip">VIP: ₹4500</span>
                 </div>
-                <a href="#booking" class="btn book-btn" data-match="CSK vs RR">Book Tickets</a>
+                <a href="booking.html?match=SRH%20vs%20DC" class="btn book-btn" data-match="SRH vs DC">Book Tickets</a>
+            </div>
+
+            <div class="match-card" data-teams="LSG PBKS">
+                <div class="match-card-header">
+                    <span class="match-badge">Match 5</span>
+                    <span class="match-date">22 April 2026</span>
+                </div>
+                <h3 class="match-teams">LSG vs PBKS</h3>
+                <p class="match-venue">🕒 7:30 PM &bull; 📍 Lucknow (BRSABV Ekana Stadium)</p>
+                <div class="match-prices">
+                    <span class="price-chip">General: ₹1100</span>
+                    <span class="price-chip">Premium: ₹2400</span>
+                    <span class="price-chip">VIP: ₹4800</span>
+                </div>
+                <a href="booking.html?match=LSG%20vs%20PBKS" class="btn book-btn" data-match="LSG vs PBKS">Book Tickets</a>
             </div>
         </div>
     </section>
@@ -137,9 +173,11 @@
             <form id="booking-form">
                 <label for="match-select">Select Match:</label>
                 <select id="match-select">
-                    <option value="RCB vs CSK">RCB vs CSK</option>
-                    <option value="MI vs KKR">MI vs KKR</option>
-                    <option value="CSK vs RR">CSK vs RR</option>
+                    <option value="CSK vs MI">CSK vs MI</option>
+                    <option value="RCB vs KKR">RCB vs KKR</option>
+                    <option value="GT vs RR">GT vs RR</option>
+                    <option value="SRH vs DC">SRH vs DC</option>
+                    <option value="LSG vs PBKS">LSG vs PBKS</option>
                 </select>
 
                 <label for="stand-select">Stand Category:</label>
